@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"fmt"
 
 	"github.com/brunoeduardodev/go-postgres-primary-key-benchmarks/internal/seeding"
@@ -15,5 +14,6 @@ func main() {
 	fmt.Printf("Connected successfully to database\n")
 
 	seeding.SeedDatabase(conn)
-	defer conn.Close(context.Background())
+
+	fmt.Printf("Seeding completed.\n")
 }
