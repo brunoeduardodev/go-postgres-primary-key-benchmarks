@@ -2,7 +2,6 @@ package seeding
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/jackc/pgx/v5"
 )
@@ -47,6 +46,7 @@ func SeedDatabase(conn *pgx.Conn) {
 		return
 	}
 
-	fmt.Printf("")
+	ensureUsersTableExist(conn)
 
+	seedUsers(conn, 5)
 }
