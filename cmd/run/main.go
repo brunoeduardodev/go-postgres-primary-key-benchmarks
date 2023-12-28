@@ -3,23 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
-	"os"
 
-	"github.com/jackc/pgx/v5"
-	"github.com/joho/godotenv"
+	"github.com/brunoeduardodev/go-postgres-primary-key-benchmarks/internal"
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
-	}
-
-	conn, err := pgx.Connect(context.Background(), os.Getenv("DATABASE_URL"))
-
-	if err != nil {
-		panic(err)
-	}
+	internal.LoadEnvs()
+	conn := internal.GetDatabaseConnection()
 
 	fmt.Printf("Connected successfully to database\n")
 
