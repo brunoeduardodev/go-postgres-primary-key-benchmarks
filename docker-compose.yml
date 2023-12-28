@@ -1,0 +1,13 @@
+# Use postgres/example user/password credentials
+version: "3.1"
+
+services:
+  go-postgres-primary-key-benchmarks:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: benchmarks
+    ports:
+      - 5530:5432
