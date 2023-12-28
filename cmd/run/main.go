@@ -4,12 +4,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/brunoeduardodev/go-postgres-primary-key-benchmarks/internal"
+	"github.com/brunoeduardodev/go-postgres-primary-key-benchmarks/internal/utils"
 )
 
 func main() {
-	internal.LoadEnvs()
-	conn := internal.GetDatabaseConnection()
+	utils.LoadEnvs()
+	conn := utils.GetDatabaseConnection()
 
 	fmt.Printf("Connected successfully to database\n")
 
